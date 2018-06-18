@@ -10,7 +10,7 @@ router.route('/charge')
         email: req.body.stripeEmail,
         source: req.body.stripeToken
     })
-    .then(customer => stripe.charges.create({
+    .then(customer => Stripe.charges.create({
         amount,
         description: 'Node JS Development Ebook',
         currency: 'usd',
