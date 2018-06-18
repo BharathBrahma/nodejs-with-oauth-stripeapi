@@ -1,3 +1,3 @@
 module.exports = {
-    linkedin_callback: 'http://localhost:5000/auth/linkedin/callback'
+    linkedin_callback: 'https://morning-woodland-80785.herokuapp.com/auth/linkedin/callback'
 }
