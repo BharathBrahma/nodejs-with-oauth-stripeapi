@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const keys = require('../config/keys');
-const Stripe = require('stripe')('sk_test_n2PGEsw8GVMR5X2s1ShIUxX8');
+const Stripe = require('stripe')(keys.stripe_publishable_key);
 router.route('/charge')
 .post((req,res) => {
    const amount = 2500;
