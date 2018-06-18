@@ -21,7 +21,7 @@ app.get('/products',(req,res)=>{
     res.render('index');
 });
 
-app.get('/login', (req,res) => {
+app.get('/', (req,res) => {
     res.render('login', { layout: false });
 });
 
