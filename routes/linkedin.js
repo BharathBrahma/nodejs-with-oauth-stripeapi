@@ -1,11 +1,13 @@
 const express = require('express');
 const router = express.Router();
 const keys = require('../config/keys');
-const Linkedin = require('node-linkedin')(keys.linkedin_client_id, keys.linkedin_client_secret, 'http://localhost:5000/auth/linkedin/callback');
+const app_constants = require('../config/app_constants');
+const Linkedin = require('node-linkedin')(keys.linkedin_client_id, keys.linkedin_client_secret, app_constants.linkedin_callback);
 
 router.route('/signin/linkedin/')
 .get((req,res)=>{
     var scope = ['r_basicprofile'];
+    //TODO:  replace the hardcoded string with a dynamic value
     var authUrl = Linkedin.auth.authorize(scope, 'DCEeFWf45A53sdfKef424');
     console.log('redirect-url', authUrl);
     res.redirect(authUrl);
@@ -32,7 +34,8 @@ router.route('/linkedin/callback')
             console.log($in.firstName);
             res.render('index', {
                 user: $in.firstName,
-                formattedName: $in.formattedName
+                formattedName: $in.formattedName,
+                stripePublishableKey: keys.stripe_publishable_key
             });
         });
 

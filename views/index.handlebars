@@ -7,9 +7,14 @@
                 Node JS Development Ebook
             </h1>
             <p class="lead">learn node js development front to back</p>
-            <form action="/charge" method="POST">
-                <script src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key="{{stripePublishableKey}}" data-amount="2500"
-                    data-name="Web Development Ebook" data-description="Ebook written by Brad Traversy" data-image="/img/marketplace.png"
+            <form action="/stripe/charge" method="POST">
+                <script src="https://checkout.stripe.com/checkout.js" 
+                    class="stripe-button" 
+                    data-key="{{stripePublishableKey}}" 
+                    data-amount="2500"
+                    data-name="Web Development Ebook" 
+                    data-description="Ebook written by Bharath Brahma" 
+                    data-image="/img/marketplace.png"
                     data-locale="auto">
                     </script>
                 <script>
